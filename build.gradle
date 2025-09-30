@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+run {
+    standardInput = System.in
+}
+
+application {
+    mainClass = 'scysco.unadmpoo11.App' 
+}
