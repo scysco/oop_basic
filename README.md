@@ -23,6 +23,7 @@ Cada carpeta en este repositorio corresponde a una unidad o a una evidencia de a
 | 01  | **Calculadora de Impuestos (U1 EA)**  | Una aplicación de consola que calcula el impuesto especial para refrescos.  | Java, Gradle |
 | 02  | **Registro para Robótica (U2 A2)**    | Sistema de inscripción para un concurso que asigna categorías por edad.     | Java, Gradle |
 | 03  | **Control Gusano Barrenador (U2 EA)** | App con menú interactivo para el monitoreo y reporte de una plaga ganadera. | Java, Gradle |
+| 04  | **Gestión de Flota (U3 A2)**          | App que aplica Herencia y Polimorfismo para gestionar una flota vehicular.  | Java, Gradle |
 |     | _Próximamente..._                     |                                                                             |              |
 
 ---
