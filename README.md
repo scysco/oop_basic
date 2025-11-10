@@ -25,7 +25,8 @@ Cada carpeta en este repositorio corresponde a una unidad o a una evidencia de a
 | 03  | **Control Gusano Barrenador (U2 EA)** | App con menú interactivo para el monitoreo y reporte de una plaga ganadera. | Java, Gradle |
 | 04  | **Gestión de Flota (U3 A2)**          | App que aplica Herencia y Polimorfismo para gestionar una flota vehicular.  | Java, Gradle |
 | 05  | **Agencia de Viajes (U3 A3)**         | App que usa `try-catch` e Interfaces para un sistema de reservas de viajes. | Java, Gradle |
-| 06  | **Sistema Petrover@ (U3 EA)**         | App de monitoreo que usa Clases Abstractas y Polimorfismo.                  | Java, Gradle |
+| 06  | **Sistema Petrover (U3 EA)**          | App de monitoreo que usa Clases Abstractas y Polimorfismo.                  | Java, Gradle |
+| 07  | **Gestión de Inventario (U4 A1)**     | App de inventario que usa arreglos paralelos y ciclos `for`.                | Java, Gradle |
 |     | _Próximamente..._                     |                                                                             |              |
 
 ---
