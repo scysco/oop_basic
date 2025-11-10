@@ -1,4 +1,5 @@
 package com.scysco.dpo1u4a1;
+
 /*
  * IMPORTACIONES 
  * Importo 'Scanner' para capturar datos desde teclado.
@@ -20,11 +21,11 @@ public class GestionInventario {
   private static Scanner scanner = new Scanner(System.in);
 
   /*
-  * a. Declara tres arreglos unidimensionales... 
-  *
-  * Estos son mis arreglos "paralelos".
-  * La posicion 'i' en los tres arreglos corresponde al mismo producto
-  */
+   * a. Declara tres arreglos unidimensionales...
+   *
+   * Estos son mis arreglos "paralelos".
+   * La posicion 'i' en los tres arreglos corresponde al mismo producto
+   */
   private static String[] productos;
   private static int[] existencias;
   private static double[] precios;
@@ -41,10 +42,9 @@ public class GestionInventario {
   // producto.
   private static int numProductosRegistrados = 0;
 
-  // Esta variable la usare para el requisito de 
+  // Esta variable la usare para el requisito de
   // "Calculo del ingreso total por ventas".
   private static double ingresoTotalVentas = 0.0;
-
 
   /**
    * Metodo principal (main).
@@ -87,25 +87,25 @@ public class GestionInventario {
        */
       switch (opcion) {
         case 1:
-        registrarProducto();
-        break;
+          registrarProducto();
+          break;
         case 2:
-        mostrarInventario();
-        break;
+          mostrarInventario();
+          break;
         case 3:
-        venderProducto();
-        break;
+          venderProducto();
+          break;
         case 4:
-        buscarProducto();
-        break;
+          buscarProducto();
+          break;
         case 5:
-        generarReporte();
-        break;
+          generarReporte();
+          break;
         case 6:
-        salir = true;
-        break;
+          salir = true;
+          break;
         default:
-        System.out.println("Opcion no valida. Intente de nuevo.");
+          System.out.println("Opcion no valida. Intente de nuevo.");
       }
 
     } while (!salir);
@@ -115,15 +115,15 @@ public class GestionInventario {
   }
 
   /**
-  * f. Captura datos desde teclado...
-  * Metodo para la Opcion 1: Registrar un nuevo producto.
-  */
+   * f. Captura datos desde teclado...
+   * Metodo para la Opcion 1: Registrar un nuevo producto.
+   */
   private static void registrarProducto() {
     System.out.println("\n--- 1. Registrar Producto ---");
 
     /*
-    * Verifico si mi inventario (arreglo) ya esta lleno.
-    */
+     * Verifico si mi inventario (arreglo) ya esta lleno.
+     */
     if (numProductosRegistrados >= TAMANO_MAX_INVENTARIO) {
       System.out.println("ERROR: El inventario esta lleno. No se pueden agregar mas productos.");
       return; // Salgo del metodo
@@ -141,10 +141,10 @@ public class GestionInventario {
     scanner.nextLine(); // Limpieza de buffer
 
     /*
-    * OPERACION CON ARREGLOS
-    * Guardo los datos en los arreglos paralelos, usando 'numProductosRegistrados' 
-    * como el indice actual.
-    */
+     * OPERACION CON ARREGLOS
+     * Guardo los datos en los arreglos paralelos, usando 'numProductosRegistrados'
+     * como el indice actual.
+     */
     productos[numProductosRegistrados] = nombre;
     existencias[numProductosRegistrados] = stock;
     precios[numProductosRegistrados] = precio;
@@ -156,30 +156,31 @@ public class GestionInventario {
   }
 
   /**
-  * Metodo para la Opcion 2: Mostrar el inventario.
-  * e. Emplea ciclos para recorrer...
-  * i. Verifica que la salida muestre... 
-  */
+   * Metodo para la Opcion 2: Mostrar el inventario.
+   * e. Emplea ciclos para recorrer...
+   * i. Verifica que la salida muestre...
+   */
   private static void mostrarInventario() {
     System.out.println("\n--- 2. Inventario Completo ---");
-    System.out.println("Producto | Existencias | Precio Unitario | Valor Total");
-    System.out.println("---------------------------------------------------------");
+    System.out.println("       Producto      | Existencias | Precio Unitario | Valor Total ");
+    System.out.println("------------------------------------------------------------------");
 
     /*
-    * Uso un ciclo 'for' para "recorrer" el arreglo
-    * desde la posicion 0 hasta el ultimo producto que haya registrado ('numProductosRegistrados').
-    */
+     * Uso un ciclo 'for' para "recorrer" el arreglo
+     * desde la posicion 0 hasta el ultimo producto que haya registrado
+     * ('numProductosRegistrados').
+     */
     for (int i = 0; i < numProductosRegistrados; i++) {
       // c. Implementa metodos que...calculen valores totales.
       double valorTotal = existencias[i] * precios[i];
 
       // Imprimo la informacion de los 3 arreglos en la misma linea.
-      System.out.println(
-        productos[i] + " | " +
-        existencias[i] + " | $" +
-        precios[i] + " | $" +
-        valorTotal
-      );
+      System.out.printf(
+          "%-20s | %11d | $%14.2f | $%11.2f\n",
+          productos[i],
+          existencias[i],
+          precios[i],
+          valorTotal);
     }
 
     if (numProductosRegistrados == 0) {
@@ -188,9 +189,9 @@ public class GestionInventario {
   }
 
   /**
-  * Metodo para la Opcion 3: Vender un producto.
-  * c. Implementa metodos que actualicen datos... 
-  */
+   * Metodo para la Opcion 3: Vender un producto.
+   * c. Implementa metodos que actualicen datos...
+   */
   private static void venderProducto() {
     System.out.println("\n--- 3. Vender Producto ---");
     System.out.print("Ingrese el nombre del producto vendido: ");
@@ -211,10 +212,10 @@ public class GestionInventario {
     scanner.nextLine(); // Limpieza
 
     /*
-    * d. Uso de estructuras de control para validar disponibilidad...
-    *
-    * Uso 'if' para validar las existencias.
-    */
+     * d. Uso de estructuras de control para validar disponibilidad...
+     *
+     * Uso 'if' para validar las existencias.
+     */
     if (cantidadVendida <= 0) {
       System.out.println("Cantidad no valida.");
     } else if (cantidadVendida > existencias[indice]) {
@@ -229,9 +230,9 @@ public class GestionInventario {
   }
 
   /**
-  * Metodo para la Opcion 4: Buscar un producto.
-  * e. Emplea ciclos para recorrer...
-  */
+   * Metodo para la Opcion 4: Buscar un producto.
+   * e. Emplea ciclos para recorrer...
+   */
   private static void buscarProducto() {
     System.out.println("\n--- 4. Buscar Producto por Nombre ---");
     System.out.print("Ingrese el nombre del producto a buscar: ");
@@ -244,20 +245,19 @@ public class GestionInventario {
       // Si lo encontre, muestro sus datos
       System.out.println("Producto encontrado:");
       System.out.println(
-        "Producto: " + productos[indice] +
-        " | Precio: $" + precios[indice] +
-        " | Existencias: " + existencias[indice]
-      );
+          "Producto: " + productos[indice] +
+              " | Precio: $" + precios[indice] +
+              " | Existencias: " + existencias[indice]);
     } else {
       System.out.println("Producto no encontrado: " + nombre);
     }
   }
 
   /**
-     * Metodo para la Opcion 5: Generar reportes.
-     * El caso de estudio pide varios reportes
-     * los implemento todos aqui.
-     */
+   * Metodo para la Opcion 5: Generar reportes.
+   * El caso de estudio pide varios reportes
+   * los implemento todos aqui.
+   */
   private static void generarReporte() {
     System.out.println("\n--- 5. Reporte de Inventario ---");
 
@@ -293,27 +293,28 @@ public class GestionInventario {
         indiceMax = i;
       }
     }
-    System.out.println("Producto con MAYOR disponibilidad: " + productos[indiceMax] + " (" + existencias[indiceMax] + " unidades)");
-    System.out.println("Producto con MENOR disponibilidad: " + productos[indiceMin] + " (" + existencias[indiceMin] + " unidades)");
+    System.out.println(
+        "Producto con MAYOR disponibilidad: " + productos[indiceMax] + " (" + existencias[indiceMax] + " unidades)");
+    System.out.println(
+        "Producto con MENOR disponibilidad: " + productos[indiceMin] + " (" + existencias[indiceMin] + " unidades)");
 
     // --- Reporte 3: Ingreso Total por Ventas ---
     System.out.println("\n3. Ingreso Total por Ventas:");
     System.out.println("Ingreso total acumulado: $" + ingresoTotalVentas);
   }
 
-
   /**
-  * --- Metodo Auxiliar ---
-  * Este es un metodo que creo para reutilizar codigo.
-  * Lo uso en la Opcion 3 (Vender) y la Opcion 4 (Buscar).
-  * Recorre el arreglo 'productos' buscando un nombre.
-  * Devuelve el 'indice' si lo encuentra.
-  * Devuelve -1 si no lo encuentra.
-  */
+   * --- Metodo Auxiliar ---
+   * Este es un metodo que creo para reutilizar codigo.
+   * Lo uso en la Opcion 3 (Vender) y la Opcion 4 (Buscar).
+   * Recorre el arreglo 'productos' buscando un nombre.
+   * Devuelve el 'indice' si lo encuentra.
+   * Devuelve -1 si no lo encuentra.
+   */
   private static int buscarIndiceProducto(String nombreBuscado) {
     /*
-    * Recorro el arreglo comparando los nombres.
-    */
+     * Recorro el arreglo comparando los nombres.
+     */
     for (int i = 0; i < numProductosRegistrados; i++) {
       // Uso 'equalsIgnoreCase' para ignorar mayusculas
       if (productos[i].equalsIgnoreCase(nombreBuscado)) {
