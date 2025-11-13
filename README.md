@@ -27,6 +27,7 @@ Cada carpeta en este repositorio corresponde a una unidad o a una evidencia de a
 | 05  | **Agencia de Viajes (U3 A3)**         | App que usa `try-catch` e Interfaces para un sistema de reservas de viajes. | Java, Gradle |
 | 06  | **Sistema Petrover (U3 EA)**          | App de monitoreo que usa Clases Abstractas y Polimorfismo.                  | Java, Gradle |
 | 07  | **Gestión de Inventario (U4 A1)**     | App de inventario que usa arreglos paralelos y ciclos `for`.                | Java, Gradle |
+| 08  | **Dashboard Académico (U4 EA)**       | App de calificaciones que usa arreglos multidimensionales (matrices).       | Java, Gradle |
 |     | _Próximamente..._                     |                                                                             |              |
 
 ---
