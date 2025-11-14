@@ -1,6 +1,6 @@
 # 📚 Proyectos de Programación Orientada a Objetos
 
-![Estado del Repositorio](https://img.shields.io/badge/Estado-En%20Construcci%C3%B3n-yellow.svg)
+![Estado del Repositorio](https://img.shields.io/badge/Estado-Completado-brightgreen.svg)
 
 ¡Bienvenido a mi repositorio de proyectos! 💻
 
@@ -28,7 +28,7 @@ Cada carpeta en este repositorio corresponde a una unidad o a una evidencia de a
 | 06  | **Sistema Petrover (U3 EA)**          | App de monitoreo que usa Clases Abstractas y Polimorfismo.                  | Java, Gradle |
 | 07  | **Gestión de Inventario (U4 A1)**     | App de inventario que usa arreglos paralelos y ciclos `for`.                | Java, Gradle |
 | 08  | **Dashboard Académico (U4 EA)**       | App de calificaciones que usa arreglos multidimensionales (matrices).       | Java, Gradle |
-|     | _Próximamente..._                     |                                                                             |              |
+| 09  | **Simulador Mundial (U4 AC)**         | App que integra POO, arreglos y aleatoriedad para simular un torneo.        | Java, Gradle |
 
 ---
 
